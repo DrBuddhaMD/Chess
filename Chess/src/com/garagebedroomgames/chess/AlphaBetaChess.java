@@ -370,9 +370,9 @@ public class AlphaBetaChess {
                     }
                     {
 
-                        oldPiece = chessBoard[r + temp * i][c + temp * j];
+                        oldPiece = chessBoard[kingPositionC/8+ temp * i][c + temp * j];
                         chessBoard[r][c] = " ";
-                        chessBoard[r + temp * j][c + temp * k] = "B";
+                        chessBoard[kingPositionC/8 + temp * j][c + temp * k] = "B";
 
                         if (kingSafe()) {
                             list = list + r + c + (r + temp * j)
