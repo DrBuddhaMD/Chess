@@ -355,6 +355,7 @@ public class AlphaBetaChess {
 	private static boolean kingSafe() {
 
 		//Bishop (Are the other bishops threatening our king)
+		String list = "";
 		
 		
 		return true;
