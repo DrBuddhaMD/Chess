@@ -355,7 +355,41 @@ public class AlphaBetaChess {
 	private static boolean kingSafe() {
 
 		//Bishop (Are the other bishops threatening our king)
-		String list = "";
+		int temp = 1;
+
+        String list = "", oldPiece;
+
+        for (int i = -1; i <= 1; i += 2) {
+            for (int j = -1; j <= 1; j += 2) {
+                try {
+                    while (" ".equals(chessBoard[kingPositionC/8 + temp * i][kingPositionC%8 + temp * j])) {temp++;}
+
+
+                    if("b".equals(chessBoard[kingPositionC/8 + temp * i][kingPositionC%8 + temp * j]){
+                        //whatever this is!!!
+                    }
+                    {
+
+                        oldPiece = chessBoard[r + temp * i][c + temp * j];
+                        chessBoard[r][c] = " ";
+                        chessBoard[r + temp * j][c + temp * k] = "B";
+
+                        if (kingSafe()) {
+                            list = list + r + c + (r + temp * j)
+                                    + (c + temp * k) + oldPiece;
+                        }
+
+                        chessBoard[r][c] = "B";
+                        chessBoard[r + temp * j][c + temp * k] = oldPiece;
+                        temp++;
+
+                    }
+                } catch (Exception e) {
+                }
+
+                temp = 1;
+            }
+        }
 		
 		
 		return true;
